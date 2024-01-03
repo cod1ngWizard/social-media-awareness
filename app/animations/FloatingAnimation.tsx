@@ -46,6 +46,8 @@ const AnimationElement = ({ element }: AnimationElementProps) => {
       zIndex: '-1',
     };
 
+    //TODO: Change img for Next Image component
+
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
@@ -80,11 +82,9 @@ const PopupAnimation = ({ elementsToAnimate }: Props) => {
     []
   );
 
-  const getRandomElement = (elementsToAnimate: Props) => {
-    const randomIndex = Math.floor(
-      Math.random() * elementsToAnimate.elementsToAnimate.length
-    );
-    return elementsToAnimate.elementsToAnimate[randomIndex];
+  const getRandomElement = ({ elementsToAnimate }: Props) => {
+    const randomIndex = Math.floor(Math.random() * elementsToAnimate.length);
+    return elementsToAnimate[randomIndex];
   };
 
   useEffect(() => {

@@ -23,10 +23,10 @@
 */
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-hex: #303030;
-  --background-end-hex: #C1C3F9;
+  --background-start-hex: #000000;
+  --background-end-hex: #50516C;
   --main-font-color: #ffffff;
-  --color-accent: #CF1F1F;
+  --color-accent: #ee1a1a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,14 +52,121 @@ br {
 
 /* custom classes */
 
-.hero-title {
-  @apply text-7xl leading-[7rem] md:text-6xl md:leading-[7rem] text-center font-bold mb-10
+
+/* #Rectangle10 {
+  animation: floatAnimation3 5s ease-in-out infinite alternate;
+} */
+
+.elements-section-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 80%;
+  background-image: url('/images/social media elements bg.png');
+  background-size: contain;
+  background-position: right;
+  z-index: -1;
+  background-repeat: no-repeat;
+  transform: translateY(13%);
+  pointer-events: none;
+  /* Center the background image vertically */
 }
 
-.hero-typing-animation {
-  @apply py-1 px-2.5 bg-accent rounded text-7xl md:text-8xl mt-5
+
+.title-highlighted::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 87%;
+  height: 45%;
+  background-color: var(--color-accent);
+  z-index: -1;
+  pointer-events: none;
 }
 
-.custom-container {
-  @apply w-full px-[35px] md:px-[100px];
+
+.elements-link {
+  background: linear-gradient(to left, rgba(240, 108, 108, 0.3), rgba(255, 16, 16, 0.3));
 }
+
+.tooltip {
+  position: absolute;
+  display: none;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  z-index: 1;
+  /* Ensure the tooltip is above other elements */
+}
+
+/*--------------- SOCIAL ELEMENTS SVG ANIMATIONS ----------------*/
+
+@keyframes floatAnimation1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(8px, 8px);
+  }
+}
+
+@keyframes floatAnimation2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-8px, -8px);
+  }
+}
+
+@keyframes floatAnimation3 {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(8px, -8px);
+  }
+}
+
+/* Apply animations to specific groups */
+#Rectangle6 {
+  animation: floatAnimation1 3s ease-in-out infinite alternate;
+}
+
+#Rectangle7 {
+  animation: floatAnimation2 4s ease-in-out infinite alternate;
+}
+
+#Group33 {
+  animation: floatAnimation3 5s ease-in-out infinite alternate;
+}
+
+#Rectangle6:hover,
+#Rectangle7:hover,
+#Group33:hover {
+  animation-play-state: paused;
+}
+
+#Rectangle10 path {
+  transition: all 0.5s ease;
+  /* Adjust the duration and easing function as needed */
+}
+
+#Rectangle10:hover path {
+  fill: white;
+  fill-opacity: 1;
+}
+/*--------------- SOCIAL ELEMENTS SVG ANIMATIONS ----------------*/

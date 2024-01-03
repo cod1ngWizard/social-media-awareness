@@ -7,6 +7,9 @@ type Props = {
 };
 
 const TypingAnimation = ({ words }: Props) => {
+  const typingAnimationStyles =
+    'mt-5 text-7xl font-bold py-1 px-2.5 bg-accent rounded md:text-8xl';
+
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
@@ -46,8 +49,7 @@ const TypingAnimation = ({ words }: Props) => {
 
   return (
     <div>
-      <span className='hero-typing-animation'>{currentWord}</span>
-      <span>|</span>
+      <span className={typingAnimationStyles}>{currentWord}</span>
     </div>
   );
 };
